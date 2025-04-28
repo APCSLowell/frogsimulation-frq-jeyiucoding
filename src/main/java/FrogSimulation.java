@@ -21,13 +21,14 @@ public class FrogSimulation
 		while(h < maxHops){
 			d = d + hopDistance();
 			h++;
+			if(d < 0){
+				return false;
+			}
+			else if(d >= goalDistance){
+				return true;
+			}
 		}
-		if(d < 0){
-			return false;
-		}
-		else if(d >= goalDistance){
-			return true;
-		}
+		
 		return false;
 	}
 	
